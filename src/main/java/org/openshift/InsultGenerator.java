@@ -17,9 +17,7 @@ public class InsultGenerator {
       String username = System.getenv("POSTGRESQL_USER");
       String password = System.getenv("PGPASSWORD");
       Class.forName("org.postgresql.Driver");
-      Connection connection = DriverManager.getConnection(databaseURL, username, password);cd /dev
-      ls -al
-      
+      Connection connection = DriverManager.getConnection(databaseURL, username, password);
       if (connection != null) {
         String SQL = "select a.string AS first, b.string AS second, c.string AS noun from short_adjective a , long_adjective b, noun c ORDER BY random() limit 1";
         Statement stmt = connection.createStatement();
